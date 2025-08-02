@@ -1,0 +1,905 @@
+// =========================================
+// Module I: C Basics
+// =========================================
+
+// 1. Print "Hello World"
+#include <stdio.h>
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+
+// 2. Display user input (using scanf/printf)
+#include <stdio.h>
+int main() {
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    printf("You entered: %d\n", x);
+    return 0;
+}
+
+// 3. Add two integers
+#include <stdio.h>
+int main() {
+    int a, b, sum;
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+    sum = a + b;
+    printf("Sum: %d\n", sum);
+    return 0;
+}
+
+// 4. Swap two numbers (using temp variable)
+#include <stdio.h>
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    temp = a; a = b; b = temp;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+
+// 5. Swap two numbers (without temp variable)
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+
+// 6. Area and perimeter of a rectangle
+#include <stdio.h>
+int main() {
+    float l, w;
+    printf("Enter length and width: ");
+    scanf("%f%f", &l, &w);
+    printf("Area: %.2f\n", l * w);
+    printf("Perimeter: %.2f\n", 2 * (l + w));
+    return 0;
+}
+
+// 7. Simple Interest
+#include <stdio.h>
+int main() {
+    float p, r, t, si;
+    printf("Enter principal, rate, time: ");
+    scanf("%f%f%f", &p, &r, &t);
+    si = (p * r * t) / 100;
+    printf("Simple Interest: %.2f\n", si);
+    return 0;
+}
+
+// 8. Arithmetic operators
+#include <stdio.h>
+int main() {
+    int a = 15, b = 4;
+    printf("Sum: %d\n", a + b);
+    printf("Difference: %d\n", a - b);
+    printf("Product: %d\n", a * b);
+    printf("Quotient: %d\n", a / b);
+    printf("Remainder: %d\n", a % b);
+    return 0;
+}
+
+// 9. Relational operators
+#include <stdio.h>
+int main() {
+    int a = 6, b = 7;
+    printf("a == b: %d\n", a == b);
+    printf("a != b: %d\n", a != b);
+    printf("a > b: %d\n", a > b);
+    printf("a < b: %d\n", a < b);
+    printf("a >= b: %d\n", a >= b);
+    printf("a <= b: %d\n", a <= b);
+    return 0;
+}
+
+// 10. Logical operators
+#include <stdio.h>
+int main() {
+    int a = 2, b = 5;
+    printf("a && b: %d\n", a && b);
+    printf("a || b: %d\n", a || b);
+    printf("!a: %d\n", !a);
+    return 0;
+}
+
+// 11. Bitwise operations
+#include <stdio.h>
+int main() {
+    int a = 6, b = 3;
+    printf("a & b: %d\n", a & b);
+    printf("a | b: %d\n", a | b);
+    printf("a ^ b: %d\n", a ^ b);
+    printf("~a: %d\n", ~a);
+    return 0;
+}
+
+// 12. Assignment operators
+#include <stdio.h>
+int main() {
+    int x = 10;
+    x += 5;
+    printf("x += 5: %d\n", x);
+    x -= 3;
+    printf("x -= 3: %d\n", x);
+    x *= 2;
+    printf("x *= 2: %d\n", x);
+    x /= 4;
+    printf("x /= 4: %d\n", x);
+    x %= 3;
+    printf("x %%= 3: %d\n", x);
+    return 0;
+}
+
+// 13. Conditional (ternary) operator
+#include <stdio.h>
+int main() {
+    int x = 10, y = 20, max;
+    max = (x > y) ? x : y;
+    printf("Max: %d\n", max);
+    return 0;
+}
+
+// 14. Type conversion (implicit, explicit)
+#include <stdio.h>
+int main() {
+    int a = 10, b = 3;
+    float result;
+    result = a / b; // Implicit
+    printf("Implicit: %.2f\n", result);
+    result = (float)a / b; // Explicit
+    printf("Explicit: %.2f\n", result);
+    return 0;
+}
+
+// 15. Increment/Decrement operators
+#include <stdio.h>
+int main() {
+    int x = 5;
+    printf("x++: %d\n", x++);
+    printf("++x: %d\n", ++x);
+    printf("x--: %d\n", x--);
+    printf("--x: %d\n", --x);
+    return 0;
+}
+
+// 16. Precedence and associativity
+#include <stdio.h>
+int main() {
+    int result = 2 + 3 * 4;
+    printf("2 + 3 * 4 = %d\n", result);
+    return 0;
+}
+
+// 17. Find largest of two numbers
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    if (a > b) printf("%d is larger\n", a);
+    else printf("%d is larger\n", b);
+    return 0;
+}
+
+// 18. Largest of three numbers
+#include <stdio.h>
+int main() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a, &b, &c);
+    if (a >= b && a >= c) printf("%d is largest\n", a);
+    else if (b >= a && b >= c) printf("%d is largest\n", b);
+    else printf("%d is largest\n", c);
+    return 0;
+}
+
+// 19. Check even or odd
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n % 2 == 0) printf("%d is even\n", n);
+    else printf("%d is odd\n", n);
+    return 0;
+}
+
+// 20. Menu-driven: sum/difference/product/quotient
+#include <stdio.h>
+int main() {
+    int a, b, choice;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    printf("1.Sum 2.Difference 3.Product 4.Quotient\nEnter choice: ");
+    scanf("%d", &choice);
+    switch(choice) {
+        case 1: printf("Sum: %d\n", a + b); break;
+        case 2: printf("Difference: %d\n", a - b); break;
+        case 3: printf("Product: %d\n", a * b); break;
+        case 4: if (b != 0) printf("Quotient: %d\n", a / b);
+                else printf("Division by zero error\n"); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
+
+// =========================================
+// Module II: Control Structures & Arrays
+// =========================================
+
+// 21. Check positive, negative, zero
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n > 0) printf("Positive\n");
+    else if (n < 0) printf("Negative\n");
+    else printf("Zero\n");
+    return 0;
+}
+
+// 22. Simple calculator using switch-case
+#include <stdio.h>
+int main() {
+    float a, b;
+    char op;
+    printf("Enter expression (e.g., 2 + 2): ");
+    scanf("%f %c %f", &a, &op, &b);
+    switch(op) {
+        case '+': printf("%.2f\n", a + b); break;
+        case '-': printf("%.2f\n", a - b); break;
+        case '*': printf("%.2f\n", a * b); break;
+        case '/': if (b != 0) printf("%.2f\n", a / b);
+                  else printf("Division by zero\n");
+                  break;
+        default: printf("Invalid operation\n");
+    }
+    return 0;
+}
+
+// 23. Leap year check
+#include <stdio.h>
+int main() {
+    int year;
+    printf("Enter year: ");
+    scanf("%d", &year);
+    if ((year%4==0 && year%100!=0) || year%400==0)
+        printf("Leap year\n");
+    else
+        printf("Not a leap year\n");
+    return 0;
+}
+
+// 24. Print 1 to N (for loop)
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for (int i=1; i<=n; i++)
+        printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+
+// 25. Sum of first N natural numbers (while loop)
+#include <stdio.h>
+int main() {
+    int n, sum = 0, i = 1;
+    printf("Enter N: ");
+    scanf("%d", &n);
+    while (i <= n) sum += i++;
+    printf("Sum: %d\n", sum);
+    return 0;
+}
+
+// 26. Multiplication table
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i=1; i<=10; i++)
+        printf("%d x %d = %d\n", n, i, n*i);
+    return 0;
+}
+
+// 27. Factorial using loop
+#include <stdio.h>
+int main() {
+    int n;
+    unsigned long long fact=1;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    for (int i=1; i<=n; i++)
+        fact *= i;
+    printf("Factorial: %llu\n", fact);
+    return 0;
+}
+
+// 28. Fibonacci sequence (loop)
+#include <stdio.h>
+int main() {
+    int n, a=0, b=1, next;
+    printf("How many terms? ");
+    scanf("%d", &n);
+    for (int i=0; i<n; i++) {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    printf("\n");
+    return 0;
+}
+
+// 29. Reverse a number
+#include <stdio.h>
+int main() {
+    int n, rev=0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    while(n != 0) {
+        rev = rev * 10 + n%10;
+        n /=10;
+    }
+    printf("Reversed: %d\n", rev);
+    return 0;
+}
+
+// 30. Palindrome number check
+#include <stdio.h>
+int main() {
+    int n, temp, rev=0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    temp = n;
+    while(temp != 0) {
+        rev = rev * 10 + temp % 10;
+        temp /= 10;
+    }
+    if (rev == n) printf("Palindrome\n");
+    else printf("Not palindrome\n");
+    return 0;
+}
+
+// 31. Armstrong numbers 1 to 1000
+#include <stdio.h>
+int pow3(int n) { return n*n*n; }
+int main() {
+    int n, temp;
+    printf("Armstrong numbers from 1 to 1000:\n");
+    for (n = 1; n <= 1000; n++) {
+        int sum = 0, x = n;
+        while (x) {
+            sum += pow3(x%10);
+            x /= 10;
+        }
+        if (sum == n)
+            printf("%d ", n);
+    }
+    printf("\n");
+    return 0;
+}
+
+// 32. Largest in an array
+#include <stdio.h>
+int main() {
+    int n, i, arr[100], max;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+    printf("Enter elements: ");
+    for (i=0; i<n; i++) scanf("%d", &arr[i]);
+    max = arr[0];
+    for(i=1; i<n; i++)
+        if(arr[i] > max) max = arr[i];
+    printf("Largest: %d\n", max);
+    return 0;
+}
+
+// 33. Smallest in an array
+#include <stdio.h>
+int main() {
+    int n, i, arr[100], min;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+    printf("Enter elements: ");
+    for (i=0; i<n; i++) scanf("%d", &arr[i]);
+    min = arr[0];
+    for(i=1; i<n; i++)
+        if(arr[i] < min) min = arr[i];
+    printf("Smallest: %d\n", min);
+    return 0;
+}
+
+// 34. Sort array (ascending)
+#include <stdio.h>
+void sort(int arr[], int n) {
+    int i, j, tmp;
+    for(i=0; i<n-1; i++)
+        for(j=i+1; j<n; j++)
+            if(arr[i]>arr[j]) {
+                tmp = arr[i]; arr[i]=arr[j]; arr[j]=tmp;
+            }
+}
+int main() {
+    int n, i, arr[100];
+    printf("Enter size: "); scanf("%d", &n);
+    printf("Enter elements: ");
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    sort(arr, n);
+    printf("Sorted: ");
+    for(i=0; i<n; i++) printf("%d ", arr[i]);
+    printf("\n");
+    return 0;
+}
+
+// 35. Linear search
+#include <stdio.h>
+int main() {
+    int n, arr[100], key, i, found=0;
+    printf("Enter size: "); scanf("%d", &n);
+    printf("Enter elements: ");
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    printf("Enter key: "); scanf("%d", &key);
+    for(i=0; i<n; i++)
+        if(arr[i]==key) { found=1; break; }
+    if(found) printf("Found at index %d\n", i);
+    else printf("Not found\n");
+    return 0;
+}
+
+// 36. Matrix addition
+#include <stdio.h>
+int main() {
+    int r, c, i, j, a[10][10], b[10][10], sum[10][10];
+    printf("Rows and columns: ");
+    scanf("%d%d", &r, &c);
+    printf("Matrix A:\n");
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            scanf("%d", &a[i][j]);
+    printf("Matrix B:\n");
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            scanf("%d", &b[i][j]);
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            sum[i][j] = a[i][j] + b[i][j];
+    printf("Sum:\n");
+    for(i=0;i<r;i++) {
+        for(j=0;j<c;j++) printf("%d ", sum[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+// 37. Matrix multiplication
+#include <stdio.h>
+int main() {
+    int a[10][10], b[10][10], mul[10][10], r1, c1, r2, c2, i, j, k;
+    printf("Enter rows & cols for 1st matrix: ");
+    scanf("%d%d", &r1, &c1);
+    printf("Enter rows & cols for 2nd matrix: ");
+    scanf("%d%d", &r2, &c2);
+    if(c1 != r2) { printf("Invalid sizes\n"); return 0; }
+    printf("1st matrix:\n");
+    for(i=0;i<r1;i++)
+        for(j=0;j<c1;j++)
+            scanf("%d", &a[i][j]);
+    printf("2nd matrix:\n");
+    for(i=0;i<r2;i++)
+        for(j=0;j<c2;j++)
+            scanf("%d", &b[i][j]);
+    for(i=0;i<r1;i++)
+        for(j=0;j<c2;j++) {
+            mul[i][j]=0;
+            for(k=0;k<c1;k++)
+                mul[i][j] += a[i][k] * b[k][j];
+        }
+    printf("Product:\n");
+    for(i=0;i<r1;i++) {
+        for(j=0;j<c2;j++)
+            printf("%d ", mul[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+// 38. Transpose a matrix
+#include <stdio.h>
+int main() {
+    int r, c, i, j, a[10][10], t[10][10];
+    printf("Enter rows and cols: ");
+    scanf("%d%d", &r, &c);
+    printf("Enter matrix:\n");
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            scanf("%d", &a[i][j]);
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+            t[j][i] = a[i][j];
+    printf("Transpose:\n");
+    for(i=0;i<c;i++) {
+        for(j=0;j<r;j++) printf("%d ", t[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+// 39. Count vowels, consonants, digits in a string
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+    char s[100];
+    int v=0, c=0, d=0, i;
+    printf("Enter string: ");
+    scanf(" %[^\n]", s);
+    for(i=0; s[i]!='\0'; i++) {
+        char ch=tolower(s[i]);
+        if(ch>='a'&&ch<='z') {
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') v++;
+            else c++;
+        } else if(isdigit(ch)) d++;
+    }
+    printf("Vowels: %d\nConsonants: %d\nDigits: %d\n", v, c, d);
+    return 0;
+}
+
+// 40. Reverse a string (character array)
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char s[100], t;
+    int i, n;
+    printf("Enter string: ");
+    scanf("%s", s);
+    n = strlen(s);
+    for(i=0;i<n/2;i++) {
+        t = s[i]; s[i]=s[n-i-1]; s[n-i-1]=t;
+    }
+    printf("Reversed: %s\n", s);
+    return 0;
+}
+// ========================
+// Module III: Functions and Macros (41 to 50)
+// ========================
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+
+// 41. Factorial using recursion
+unsigned long long factorial_rec(int n) {
+    if(n == 0) return 1;
+    else return n * factorial_rec(n -1);
+}
+
+void prog41() {
+    int num;
+    printf("41. Enter number for factorial: ");
+    scanf("%d", &num);
+    printf("Factorial of %d = %llu\n", num, factorial_rec(num));
+}
+
+// 42. Sum of array elements using function
+int sumArray(int arr[], int n) {
+    int sum=0;
+    for(int i=0; i<n; i++)
+        sum += arr[i];
+    return sum;
+}
+
+void prog42() {
+    int n;
+    printf("42. Enter array size: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter elements: ");
+    for(int i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Sum of array elements = %d\n", sumArray(arr, n));
+}
+
+// 43. Swap values using pass by value
+void swap_val(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swap_val: a=%d, b=%d\n", a, b);
+}
+
+void prog43() {
+    int x=10, y=20;
+    printf("43. Before swap_val: x=%d, y=%d\n", x, y);
+    swap_val(x,y);
+    printf("After swap_val: x=%d, y=%d\n", x, y);
+}
+
+// 44. Factorial using recursion (int)
+int factorial_int(int n) {
+    if(n<=1) return 1;
+    return n*factorial_int(n-1);
+}
+
+void prog44() {
+    int num;
+    printf("44. Enter number for factorial: ");
+    scanf("%d", &num);
+    printf("Factorial of %d = %d\n", num, factorial_int(num));
+}
+
+// 45. GCD using recursion
+int gcd(int a, int b) {
+    if(b==0) return a;
+    return gcd(b, a%b);
+}
+
+void prog45() {
+    int a,b;
+    printf("45. Enter two numbers for GCD: ");
+    scanf("%d %d", &a, &b);
+    printf("GCD of %d and %d = %d\n", a, b, gcd(a,b));
+}
+
+// 46. Macro example for area of circle
+#define PI 3.14159
+#define AREA(r) (PI*(r)*(r))
+
+void prog46() {
+    float radius;
+    printf("46. Enter radius: ");
+    scanf("%f", &radius);
+    printf("Area of circle = %.2f\n", AREA(radius));
+}
+
+// 47. Recursive sum of digits
+int sumOfDigits(int n) {
+    if(n==0) return 0;
+    return (n%10) + sumOfDigits(n/10);
+}
+
+void prog47() {
+    int n;
+    printf("47. Enter number: ");
+    scanf("%d", &n);
+    printf("Sum of digits = %d\n", sumOfDigits(n));
+}
+
+// 48. Prime number check function
+bool isPrime(int n) {
+    if(n<=1) return false;
+    for(int i=2; i*i<=n; i++)
+        if(n % i == 0)
+            return false;
+    return true;
+}
+
+void prog48() {
+    int num;
+    printf("48. Enter number to check prime: ");
+    scanf("%d", &num);
+    if(isPrime(num))
+        printf("%d is prime\n", num);
+    else
+        printf("%d is not prime\n", num);
+}
+
+// 49. Palindrome check function for string
+bool isPalindrome(char str[]) {
+    int len = strlen(str);
+    for(int i=0; i<len/2; i++) {
+        if(str[i] != str[len-i-1])
+            return false;
+    }
+    return true;
+}
+
+void prog49() {
+    char str[100];
+    printf("49. Enter string: ");
+    scanf("%s", str);
+    if(isPalindrome(str))
+        printf("%s is a palindrome\n", str);
+    else
+        printf("%s is not a palindrome\n", str);
+}
+
+// 50. Find min and max
+int findMax(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int findMin(int a, int b) {
+    return (a < b) ? a : b;
+}
+
+void prog50() {
+    int x, y;
+    printf("50. Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+    printf("Maximum = %d\n", findMax(x, y));
+    printf("Minimum = %d\n", findMin(x, y));
+}
+
+// ========================
+// Module IV: Pointers (51 to 55)
+// ========================
+
+// 51. Write a C program to input two numbers and print their sum using pointers.
+void prog51() {
+    int a, b, sum;
+    int *p1, *p2;
+    printf("51. Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    p1 = &a; p2 = &b;
+    sum = *p1 + *p2;
+    printf("Sum = %d\n", sum);
+}
+
+// 52. Write a C program to swap two numbers using call by reference (pointers).
+void swap_ptr(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void prog52() {
+    int x=10, y=20;
+    printf("52. Before swap: x=%d, y=%d\n", x, y);
+    swap_ptr(&x, &y);
+    printf("After swap: x=%d, y=%d\n", x, y);
+}
+
+// 53. Write a C program to access array elements using pointers.
+void prog53() {
+    int arr[5] = {10,20,30,40,50};
+    int *p = arr;
+    printf("53. Array elements using pointers: ");
+    for(int i=0; i<5; i++)
+        printf("%d ", *(p+i));
+    printf("\n");
+}
+
+// 54. Write a C program to demonstrate array of pointers (string array).
+void prog54() {
+    char *arr[] = {"C", "Programming", "Language"};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("54. Array of pointers printing strings: ");
+    for(int i=0; i<n; i++)
+        printf("%s ", arr[i]);
+    printf("\n");
+}
+
+// 55. Write a C program to demonstrate pointer to function and call it.
+void greet() {
+    printf("Hello from function pointer!\n");
+}
+
+void prog55() {
+    void (*funcPtr)() = greet;
+    funcPtr();
+}
+
+// ========================
+// Module V: Structures, File Handling, Storage Classes (56 to 60)
+// ========================
+
+// 56. Write a C program to define a structure for Student and print its members.
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+void prog56() {
+    struct Student s1 = {1, "Alice", 85.5};
+    printf("56. Student info:\nID: %d\nName: %s\nMarks: %.2f\n", s1.id, s1.name, s1.marks);
+}
+
+// 57. Write a C program to create an array of structures for employees and display their data.
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+void prog57() {
+    int n;
+    printf("57. Enter number of employees: ");
+    scanf("%d", &n);
+    struct Employee emp[n];
+    for(int i=0; i<n; i++) {
+        printf("Enter ID, name, salary for employee %d:\n", i+1);
+        scanf("%d %s %f", &emp[i].id, emp[i].name, &emp[i].salary);
+    }
+    printf("Employees details:\n");
+    for(int i=0; i<n; i++) {
+        printf("ID: %d, Name: %s, Salary: %.2f\n", emp[i].id, emp[i].name, emp[i].salary);
+    }
+}
+
+// 58. Write a C program to demonstrate self-referential structure (single linked list node) and traverse it.
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+void prog58() {
+    struct Node n1, n2;
+    n1.data = 10;
+    n1.next = &n2;
+    n2.data = 20;
+    n2.next = NULL;
+    struct Node *ptr = &n1;
+    printf("58. Linked list data: ");
+    while(ptr) {
+        printf("%d ", ptr->data);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
+// 59. Write a C program to handle file: write and read contents from a text file.
+void prog59() {
+    FILE *fp = fopen("file.txt", "w");
+    if(fp == NULL) {
+        printf("Error opening file\n");
+        return;
+    }
+    fprintf(fp, "Hello, file handling in C!\n");
+    fclose(fp);
+    
+    char ch;
+    fp = fopen("file.txt", "r");
+    if(fp == NULL) {
+        printf("Error opening file\n");
+        return;
+    }
+    printf("59. File contents:\n");
+    while((ch = fgetc(fp)) != EOF) {
+        putchar(ch);
+    }
+    fclose(fp);
+}
+
+// 60. Write a C program to use command line arguments to sum two numbers.
+void prog60(int argc, char* argv[]) {
+    if(argc != 3) {
+        printf("Usage: <program> num1 num2\n");
+        return;
+    }
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
+    printf("60. Sum = %d\n", num1 + num2);
+}
+
+
+int main(int argc, char* argv[]) {
+    // Uncomment to run desired program:
+
+    // prog51();
+    // prog52();
+    // prog53();
+    // prog54();
+    // prog55();
+
+    // prog56();
+    // prog57();
+    // prog58();
+    // prog59();
+    // prog60(argc, argv);
+
+    return 0;
+}
